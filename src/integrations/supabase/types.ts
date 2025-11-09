@@ -14,6 +14,45 @@ export type Database = {
   }
   public: {
     Tables: {
+      gigs: {
+        Row: {
+          budget: number | null
+          category: Database["public"]["Enums"]["gig_category"]
+          created_at: string
+          description: string
+          id: string
+          location: string | null
+          provider_id: string
+          status: Database["public"]["Enums"]["gig_status"]
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          budget?: number | null
+          category: Database["public"]["Enums"]["gig_category"]
+          created_at?: string
+          description: string
+          id?: string
+          location?: string | null
+          provider_id: string
+          status?: Database["public"]["Enums"]["gig_status"]
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          budget?: number | null
+          category?: Database["public"]["Enums"]["gig_category"]
+          created_at?: string
+          description?: string
+          id?: string
+          location?: string | null
+          provider_id?: string
+          status?: Database["public"]["Enums"]["gig_status"]
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           avatar_url: string | null
@@ -77,6 +116,17 @@ export type Database = {
     }
     Enums: {
       app_role: "gig_seeker" | "gig_provider"
+      gig_category:
+        | "web_development"
+        | "mobile_development"
+        | "design"
+        | "writing"
+        | "marketing"
+        | "video_editing"
+        | "photography"
+        | "consulting"
+        | "other"
+      gig_status: "open" | "in_progress" | "completed" | "closed"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -205,6 +255,18 @@ export const Constants = {
   public: {
     Enums: {
       app_role: ["gig_seeker", "gig_provider"],
+      gig_category: [
+        "web_development",
+        "mobile_development",
+        "design",
+        "writing",
+        "marketing",
+        "video_editing",
+        "photography",
+        "consulting",
+        "other",
+      ],
+      gig_status: ["open", "in_progress", "completed", "closed"],
     },
   },
 } as const
