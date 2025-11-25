@@ -71,9 +71,7 @@ src/
 
 There are several ways of editing your application.
 
-**Use Lovable**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/51a4b5a3-1d12-4008-8133-82a13416c4ce) and start prompting.
 
 Changes made via Lovable will be committed automatically to this repo.
 
@@ -125,7 +123,7 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/51a4b5a3-1d12-4008-8133-82a13416c4ce) and click on Share -> Publish.
+
 
 ## Environment Variables
 
@@ -147,7 +145,6 @@ To connect a custom domain:
 2. Click Connect Domain
 3. Follow the setup instructions
 
-Read more: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
 
 ## GitHub Integration
 
@@ -163,7 +160,7 @@ Changes sync bidirectionally between Lovable and GitHub.
 1. Sign up as either a Gig Provider or Gig Seeker
 2. **Providers**: Create and manage your gig listings
 3. **Seekers**: Browse and filter available gigs
-4. All authentication is handled securely via Lovable Cloud
+
 
 ## Support
 
