@@ -1,11 +1,12 @@
 import { useAuth } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { LogOut, Briefcase, Users } from 'lucide-react';
+import { LogOut, Briefcase, Users, User } from 'lucide-react';
 import { ManageGigs } from './provider/ManageGigs';
 import { BrowseGigs } from './seeker/BrowseGigs';
 import { useEffect, useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
+import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
   const { user, userRole, signOut } = useAuth();
@@ -55,6 +56,12 @@ const Dashboard = () => {
                 {userRole?.replace('_', ' ')}
               </p>
             </div>
+            <Button asChild variant="ghost" size="sm">
+              <Link to={`/profile/${user?.id}`}>
+                <User className="h-4 w-4 mr-2" />
+                Profile
+              </Link>
+            </Button>
             <Button onClick={signOut} variant="outline" size="sm">
               <LogOut className="h-4 w-4 mr-2" />
               Sign Out
