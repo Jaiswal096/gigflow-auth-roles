@@ -1,4 +1,67 @@
-# Welcome to your Lovable project
+# GigX - Freelance Gig Marketplace Platform
+
+A full-stack web platform connecting gig providers with gig seekers. Built with React, TypeScript, and Lovable Cloud (Supabase).
+
+## Features
+
+### For Gig Providers
+- Create, edit, and delete gig listings
+- Manage gig status (open/closed/completed)
+- Personalized dashboard with gig management
+- Real-time gig statistics
+
+### For Gig Seekers
+- Browse available gigs
+- Search and filter by category
+- View detailed gig information
+- Responsive grid layout
+
+### Authentication & Security
+- Secure email/password authentication
+- Role-based access control (Provider/Seeker)
+- Row-level security policies
+- Protected routes
+
+## Tech Stack
+
+- **Frontend**: React 18, TypeScript, Vite
+- **UI**: shadcn-ui, Tailwind CSS
+- **Backend**: Lovable Cloud (Supabase)
+- **Database**: PostgreSQL with RLS
+- **Authentication**: Supabase Auth
+- **State Management**: React Query
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── gig/              # Gig-related components
+│   ├── ui/               # shadcn-ui components
+│   └── ProtectedRoute.tsx
+├── contexts/
+│   └── AuthContext.tsx   # Authentication state
+├── pages/
+│   ├── Auth.tsx          # Login/Signup
+│   ├── Dashboard.tsx     # Role-based dashboard
+│   ├── Landing.tsx       # Public homepage
+│   ├── provider/         # Provider features
+│   └── seeker/           # Seeker features
+└── integrations/
+    └── supabase/         # Supabase client & types
+```
+
+## Database Schema
+
+### Tables
+- **profiles**: User profile information
+- **user_roles**: Role assignments (gig_seeker/gig_provider)
+- **gigs**: Gig listings with category, budget, location
+
+### Security
+- Row-Level Security (RLS) enabled on all tables
+- Role-based access using `has_role()` function
+- Secure authentication flow
 
 ## Project info
 
@@ -64,10 +127,46 @@ This project is built with:
 
 Simply open [Lovable](https://lovable.dev/projects/51a4b5a3-1d12-4008-8133-82a13416c4ce) and click on Share -> Publish.
 
-## Can I connect a custom domain to my Lovable project?
+## Environment Variables
 
-Yes, you can!
+Environment variables are automatically managed by Lovable Cloud:
+- `VITE_SUPABASE_URL`
+- `VITE_SUPABASE_PUBLISHABLE_KEY`
+- `VITE_SUPABASE_PROJECT_ID`
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## Deployment
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Click the **Publish** button in Lovable to deploy your app:
+- Frontend changes require clicking "Update" in the publish dialog
+- Backend changes (database, edge functions) deploy automatically
+
+## Custom Domain
+
+To connect a custom domain:
+1. Navigate to Project > Settings > Domains
+2. Click Connect Domain
+3. Follow the setup instructions
+
+Read more: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
+## GitHub Integration
+
+Connect to GitHub via the GitHub button in the top right:
+1. Authorize the Lovable GitHub App
+2. Select your GitHub account/organization
+3. Create repository
+
+Changes sync bidirectionally between Lovable and GitHub.
+
+## Getting Started
+
+1. Sign up as either a Gig Provider or Gig Seeker
+2. **Providers**: Create and manage your gig listings
+3. **Seekers**: Browse and filter available gigs
+4. All authentication is handled securely via Lovable Cloud
+
+## Support
+
+- [Documentation](https://docs.lovable.dev/)
+- [Discord Community](https://discord.com/channels/1119885301872070706/1280461670979993613)
+- [YouTube Tutorials](https://www.youtube.com/watch?v=9KHLTZaJcR8&list=PLbVHz4urQBZkJiAWdG8HWoJTdgEysigIO)
